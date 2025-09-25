@@ -35,6 +35,7 @@ $icon-menu-size: $font-size-link;
     fill: $color-text-secondary;
     width: $icon-header-size;
     height: $icon-header-size;
+    min-width: $icon-header-size;
   }
 
   span {
@@ -82,6 +83,7 @@ $icon-menu-size: $font-size-link;
       fill: $color-text-secondary;
       width: $icon-menu-size;
       height: $icon-menu-size;
+      min-width: $icon-menu-size;
     }
 
     span {
