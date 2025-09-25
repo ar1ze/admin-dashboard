@@ -7,7 +7,9 @@ $box-shadow-header: 0 4px 8px -1px rgba($color-black, 0.1);
 $box-shadow-buttons: 0 2px 4px rgba($color-black, 0.25);
 
 $icon-profile-size: $font-size-search;
+
 $image-user-profile-size: $icon-profile-size * 1.8;
+$image-welcome-avatar-size: 4rem;
 
 .page-header {
   & {
@@ -51,23 +53,23 @@ $image-user-profile-size: $icon-profile-size * 1.8;
       flex-basis: 55%;
     }
 
-    svg {
+    .search-bar__icon {
       width: $font-size-search;
       height: $font-size-search;
       min-width: $font-size-search;
     }
 
-    input {
+    .search-bar__input {
       background: $color-background-body;
       border-radius: 2rem;
       border: none;
       height: $height-search;
-      flex-basis: 100%;
+      flex-basis: min(50rem, 100%);
       padding: 0.2rem 0.8rem;
       font-size: 0.9rem;
     }
 
-    input:focus {
+    .search-bar__input:focus {
       outline: none;
     }
   }
@@ -81,16 +83,23 @@ $image-user-profile-size: $icon-profile-size * 1.8;
       justify-content: flex-end;
       padding-right: 2%;
     }
-    svg {
+
+    .user-profile__notification-icon {
       width: $icon-profile-size;
       height: $icon-profile-size;
       min-width: $icon-profile-size;
     }
-    img {
+
+    .user-profile__avatar {
       width: $image-user-profile-size;
       height: $image-user-profile-size;
     }
-    span {
+
+    .user-profile__name {
+      font-weight: bold;
+    }
+
+    .welcome-message__user {
       font-weight: bold;
     }
   }
@@ -109,6 +118,11 @@ $image-user-profile-size: $icon-profile-size * 1.8;
       gap: $spacing-lg;
     }
 
+    .welcome-message__avatar {
+      width: $image-welcome-avatar-size;
+      height: $image-welcome-avatar-size;
+    }
+
     .welcome-message__text {
       & {
         padding: 0;
@@ -116,6 +130,7 @@ $image-user-profile-size: $icon-profile-size * 1.8;
         font-weight: bold;
         font-size: 0.9rem;
       }
+
       a {
         text-decoration: none;
       }
@@ -137,7 +152,7 @@ $image-user-profile-size: $icon-profile-size * 1.8;
       flex: 1;
       margin: 0;
       font-family: inherit;
-      font-weight: bold;
+      font-weight: 600;
       font-size: 0.95rem;
       padding: 0.6rem 1.8rem;
       border-radius: 2rem;

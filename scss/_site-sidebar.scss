@@ -31,14 +31,14 @@ $icon-menu-size: $font-size-link;
     opacity: 0.8;
   }
 
-  svg {
+  .sidebar-header__icon {
     fill: $color-text-secondary;
     width: $icon-header-size;
     height: $icon-header-size;
     min-width: $icon-header-size;
   }
 
-  span {
+  .sidebar-header__title {
     font-size: $font-size-header;
     font-weight: 600;
   }
@@ -79,14 +79,14 @@ $icon-menu-size: $font-size-link;
       opacity: 0.8;
     }
 
-    svg {
+    .nav-link__icon {
       fill: $color-text-secondary;
       width: $icon-menu-size;
       height: $icon-menu-size;
       min-width: $icon-menu-size;
     }
 
-    span {
+    .nav-link__text {
       font-weight: 600;
       font-size: $font-size-link;
     }
