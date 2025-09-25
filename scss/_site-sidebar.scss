@@ -8,12 +8,21 @@
   padding: 1.5rem 1rem;
 }
 
-.sidebar-header {
+.sidebar-header__link {
+
   & {
     display: flex;
     align-items: center;
     gap: 0.8rem;
     color: $color-text-secondary;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    transform: translateY(1px);
+    opacity: 0.8;
   }
 
   svg {
@@ -52,19 +61,15 @@
       gap: 1rem;
       color: $color-text-secondary;
       transition: 
-        background-color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out, 
         transform 0.2s ease-in-out;
     }
-    
-    &:hover, 
+
+    &:hover,
     &:focus {
       outline: none;
       transform: translateY(1px);
-      opacity: 0.6;
-
-      svg {
-        fill: lightgray;
-      }
+      opacity: 0.8;
     }
 
     svg {

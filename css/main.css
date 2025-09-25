@@ -90,18 +90,24 @@ textarea:not([rows]) {
   padding: 1.5rem 1rem;
 }
 
-.sidebar-header {
+.sidebar-header__link {
   display: flex;
   align-items: center;
   gap: 0.8rem;
   color: #ffffff;
+  text-decoration: none;
 }
-.sidebar-header svg {
+.sidebar-header__link:hover, .sidebar-header__link:focus {
+  outline: none;
+  transform: translateY(1px);
+  opacity: 0.8;
+}
+.sidebar-header__link svg {
   fill: #ffffff;
   width: 2.6rem;
   height: 2.6rem;
 }
-.sidebar-header span {
+.sidebar-header__link span {
   font-size: 1.4rem;
   font-weight: 600;
 }
@@ -130,10 +136,7 @@ textarea:not([rows]) {
 .sidebar-navigation .nav-menu__link:hover, .sidebar-navigation .nav-menu__link:focus {
   outline: none;
   transform: translateY(1px);
-  opacity: 0.6;
-}
-.sidebar-navigation .nav-menu__link:hover svg, .sidebar-navigation .nav-menu__link:focus svg {
-  fill: lightgray;
+  opacity: 0.8;
 }
 .sidebar-navigation .nav-menu__link svg {
   fill: #ffffff;
