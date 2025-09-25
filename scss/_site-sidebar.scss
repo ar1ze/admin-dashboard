@@ -1,5 +1,11 @@
 @use 'variables' as *;
 
+$font-size-header: 1.4rem;
+$font-size-link: 1.05rem;
+
+$icon-header-size: 2.6rem; 
+$icon-menu-size: $font-size-link; 
+
 .site-sidebar {
   background: $color-primary;
   display: flex;
@@ -13,7 +19,7 @@
   & {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: $spacing-sm;
     color: $color-text-secondary;
     text-decoration: none;
   }
@@ -27,12 +33,12 @@
 
   svg {
     fill: $color-text-secondary;
-    width: 2.6rem;
-    height: 2.6rem;
+    width: $icon-header-size;
+    height: $icon-header-size;
   }
 
   span {
-    font-size: $font-size-sidbar-header;
+    font-size: $font-size-header;
     font-weight: 600;
   }
 }
@@ -48,9 +54,9 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: $spacing-sm;
     margin: 0;
-    padding: 0 0.5rem;
+    padding-inline: 0.5rem;
   }
 
   .nav-menu__link {
@@ -74,13 +80,13 @@
 
     svg {
       fill: $color-text-secondary;
-      width: $font-size-sidebar-link;
-      height: $font-size-sidebar-link;
+      width: $icon-menu-size;
+      height: $icon-menu-size;
     }
 
     span {
       font-weight: 600;
-      font-size: $font-size-sidebar-link;
+      font-size: $font-size-link;
     }
   }
 }

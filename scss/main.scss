@@ -2,6 +2,7 @@
 @use 'reset';
 @use 'variables';
 @use 'site-sidebar';
+@use 'page-header';
 
 svg {
   width: 2rem;
@@ -18,5 +19,17 @@ body {
   margin: 0;
   display: grid;
   grid-template-columns: 22vh 1fr;
+  font-size: 16px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

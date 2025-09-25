@@ -1,0 +1,158 @@
+@use 'variables' as *;
+
+$font-size-search: 1.6rem;
+$height-search: $font-size-search * 1.3;
+
+$box-shadow-header: 0 4px 8px -1px rgba($color-black, 0.1);
+$box-shadow-buttons: 0 2px 4px rgba($color-black, 0.25);
+
+$icon-profile-size: $font-size-search;
+$image-user-profile-size: $icon-profile-size * 1.8;
+
+.page-header {
+  & {
+    box-shadow: $box-shadow-header;
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 1;
+  }
+
+  .user-profile__notification-button,
+  .search-bar__button {
+    padding: 0;
+    border: none;
+    background: $color-white;
+  }
+
+  .user-profile__avatar,
+  .welcome-message__avatar,
+  .user-profile__notification-button,
+  .search-bar__button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.header-top {
+  & {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+  }
+
+  .search-bar {
+    & {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+      flex-basis: 55%;
+    }
+
+    svg {
+      width: $font-size-search;
+      height: $font-size-search;
+      min-width: $font-size-search;
+    }
+
+    input {
+      background: $color-background-body;
+      border-radius: 2rem;
+      border: none;
+      height: $height-search;
+      flex-basis: 100%;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    input:focus {
+      outline: none;
+    }
+  }
+
+  .user-profile {
+    & {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      justify-content: flex-end;
+      padding-right: 2%;
+    }
+    svg {
+      width: $icon-profile-size;
+      height: $icon-profile-size;
+      min-width: $icon-profile-size;
+    }
+    img {
+      width: $image-user-profile-size;
+      height: $image-user-profile-size;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.header-bottom {
+  & {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .welcome-message {
+    & {
+      display: flex;
+      align-items: center;
+      gap: $spacing-lg;
+    }
+
+    .welcome-message__text {
+      & {
+        padding: 0;
+        margin: 0;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+
+    .welcome-message__user {
+      font-size: 1.2rem;
+    }
+  }
+
+  .action-buttons {
+    & {
+      display: flex;
+      align-items: center;
+      gap: $spacing-lg;
+    }
+
+    .btn {
+      flex: 1;
+      margin: 0;
+      font-family: inherit;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.6rem 1.8rem;
+      border-radius: 2rem;
+      border: none;
+      background: $color-primary;
+      color: $color-text-secondary;
+      box-shadow: $box-shadow-buttons;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
