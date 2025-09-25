@@ -1,6 +1,7 @@
 @use 'fonts';
 @use 'reset';
 @use 'variables';
+@use 'site-sidebar';
 
 svg {
   width: 2rem;
@@ -11,3 +12,11 @@ img {
   width: 4rem;
   height: 4rem;
 }
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 22vh 1fr;
+}
+

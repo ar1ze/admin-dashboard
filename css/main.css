@@ -82,6 +82,69 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
+.site-sidebar {
+  background: #2563eb;
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+  padding: 1.5rem 1rem;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #ffffff;
+}
+.sidebar-header svg {
+  fill: #ffffff;
+  width: 2.6rem;
+  height: 2.6rem;
+}
+.sidebar-header span {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.sidebar-navigation .nav-menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0 0.5rem;
+}
+.sidebar-navigation .nav-menu__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 1rem;
+  color: #ffffff;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.sidebar-navigation .nav-menu__link:hover, .sidebar-navigation .nav-menu__link:focus {
+  outline: none;
+  transform: translateY(1px);
+  opacity: 0.6;
+}
+.sidebar-navigation .nav-menu__link:hover svg, .sidebar-navigation .nav-menu__link:focus svg {
+  fill: lightgray;
+}
+.sidebar-navigation .nav-menu__link svg {
+  fill: #ffffff;
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.sidebar-navigation .nav-menu__link span {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
 svg {
   width: 2rem;
   height: 2rem;
@@ -90,4 +153,11 @@ svg {
 img {
   width: 4rem;
   height: 4rem;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 22vh 1fr;
 }/*# sourceMappingURL=main.css.map */
