@@ -13,10 +13,12 @@ $image-welcome-avatar-size: 4rem;
 
 .page-header {
   & {
+    flex-basis: 13vh;
     box-shadow: $box-shadow-header;
     padding: 1.5rem 2.5rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 2rem;
     z-index: 1;
   }

@@ -10,11 +10,6 @@ svg {
   height: 2rem;
 }
 
-img {
-  width: 4rem;
-  height: 4rem;
-}
-
 body {
   height: 100vh;
   margin: 0;
@@ -25,7 +20,7 @@ body {
 
 .main-content {
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
 }
 
 .visually-hidden {
