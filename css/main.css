@@ -288,6 +288,7 @@
 
 .section-title {
   font-size: 1.25rem;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -335,6 +336,7 @@
 
 .project-card__title {
   font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .project-card__title-link {
