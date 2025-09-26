@@ -1,188 +1,172 @@
+@use '../utils/mixins';
 @use '../utils/variables' as *;
 
+/*====================================
+=               VARIABLES            =
+====================================*/
+
 $font-size-search: 1.6rem;
-$height-search: $font-size-search * 1.3;
+$font-size-welcome: 1.2rem;
+$font-size-btn: 0.95rem;
 
 $box-shadow-header: 0 4px 8px -1px rgba($color-black, 0.1);
 $box-shadow-buttons: 0 2px 4px rgba($color-black, 0.25);
 
-$icon-profile-size: $font-size-search;
+$size-profile-icon: $font-size-search;
+$size-user-profile-image: $size-profile-icon * 1.8;
+$size-welcome-avatar-image: 4rem;
 
-$image-user-profile-size: $icon-profile-size * 1.8;
-$image-welcome-avatar-size: 4rem;
+$height-search: $font-size-search * 1.3;
+
+/*====================================
+=               HEADER               =
+====================================*/
 
 .page-header {
-  & {
-    flex-basis: 13vh;
-    box-shadow: $box-shadow-header;
-    padding: 1.5rem 2.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 2rem;
-    z-index: 1;
-  }
-
-  .user-profile__notification-button,
-  .search-bar__button {
-    padding: 0;
-    border: none;
-    background: $color-white;
-  }
-
-  .user-profile__avatar,
-  .welcome-message__avatar {
-    &:hover {
-      opacity: 0.95;
-    }
-  }
-  .user-profile__avatar,
-  .welcome-message__avatar,
-  .user-profile__notification-button,
-  .search-bar__button {
-    &:hover {
-      cursor: pointer;
-    }
-  }
+  flex-basis: 13vh;
+  box-shadow: $box-shadow-header;
+  padding: $space-md $space-xl;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $space-lg;
+  z-index: 1;
 }
 
 .header-top {
-  & {
-    display: flex;
-    align-items: center;
-    gap: 8rem;
-  }
-
-  .search-bar {
-    & {
-      display: flex;
-      align-items: center;
-      gap: $spacing-md;
-      flex-basis: 55%;
-    }
-
-    .search-bar__icon {
-      width: $font-size-search;
-      height: $font-size-search;
-      min-width: $font-size-search;
-    }
-
-    .search-bar__input {
-      background: $color-background-body;
-      border-radius: 2rem;
-      border: none;
-      height: $height-search;
-      flex-basis: min(50rem, 100%);
-      padding: 0.2rem 0.8rem;
-      font-size: 0.9rem;
-    }
-
-    .search-bar__input:focus {
-      outline: none;
-    }
-  }
-
-  .user-profile {
-    & {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      gap: 1.8rem;
-      justify-content: flex-end;
-      padding-right: 2%;
-    }
-
-    .user-profile__notification-icon {
-      width: $icon-profile-size;
-      height: $icon-profile-size;
-      min-width: $icon-profile-size;
-    }
-
-    .user-profile__avatar {
-      width: $image-user-profile-size;
-      height: $image-user-profile-size;
-    }
-
-    .user-profile__name {
-      font-weight: bold;
-    }
-
-    .welcome-message__user {
-      font-weight: bold;
-    }
-  }
+  display: flex;
+  align-items: center;
+  gap: 4 * $space-lg;
 }
 
 .header-bottom {
-  & {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*====================================
+=             SEARCH BAR             =
+====================================*/
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  flex-basis: 55%;
+}
+
+.search-bar__button {
+  padding: 0;
+  border: none;
+  background: $color-white;
+}
+
+.search-bar__icon {
+  @include mixins.icon-size($font-size-search);
+  @include mixins.hover-opacity-pointer();
+}
+
+.search-bar__input {
+  flex-basis: min(50rem, 100%);
+  background: $color-background-body;
+  border-radius: 2rem;
+  border: none;
+  height: $height-search;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.9rem;
+
+  &:focus {
+    outline: none;
   }
+}
 
-  .welcome-message {
-    & {
-      display: flex;
-      align-items: center;
-      gap: $spacing-lg;
-    }
+/*====================================
+=            USER PROFILE            =
+====================================*/
 
-    .welcome-message__avatar {
-      width: $image-welcome-avatar-size;
-      height: $image-welcome-avatar-size;
-    }
+.user-profile {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  justify-content: flex-end;
+  padding-right: 2%;
+}
 
-    .welcome-message__text {
-      & {
-        padding: 0;
-        margin: 0;
-        font-weight: bold;
-        font-size: 0.9rem;
-      }
+.user-profile__notification-button {
+  padding: 0;
+  border: none;
+  background: $color-white;
+}
 
-      .welcome-message__handle {
-        & {
-          text-decoration: none;
-          color: $color-black;
-        }
+.user-profile__notification-icon {
+  @include mixins.icon-size($size-profile-icon);
+  @include mixins.hover-opacity-pointer();
+}
 
-        &:hover {
-          color: $color-grey;
-        }
-      }
-    }
+.user-profile__avatar {
+  @include mixins.avatar-size($size-user-profile-image);
+  @include mixins.hover-opacity-pointer();
+}
 
-    .welcome-message__user {
-      font-size: 1.2rem;
-    }
-  }
+.user-profile__name {
+  font-weight: bold;
+  @include mixins.interactive-handle($color-black, $color-dark-grey);
+  @include mixins.hover-opacity-pointer();
+}
 
-  .action-buttons {
-    & {
-      display: flex;
-      align-items: center;
-      gap: $spacing-lg;
-    }
+/*====================================
+=          WELCOME MESSAGE           =
+====================================*/
 
-    .btn {
-      flex: 1;
-      margin: 0;
-      font-family: inherit;
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.6rem 1.8rem;
-      border-radius: 2rem;
-      border: none;
-      background: $color-primary;
-      color: $color-text-secondary;
-      box-shadow: $box-shadow-buttons;
+.welcome-message {
+  display: flex;
+  align-items: center;
+  gap: $space-lg;
+}
 
-      &:hover {
-        transform: translateY(-2px);
-      }
+.welcome-message__avatar {
+  @include mixins.avatar-size($size-welcome-avatar-image);
+  @include mixins.hover-opacity-pointer();
+}
 
-      &:active {
-        transform: translateY(0);
-      }
-    }
-  }
+.welcome-message__text {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.welcome-message__handle {
+  @include mixins.interactive-handle($color-black, $color-dark-grey);
+}
+
+.welcome-message__user {
+  font-size: $font-size-welcome;
+  font-weight: bold;
+}
+
+/*====================================
+=          ACTION BUTTONS            =
+====================================*/
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: $space-lg;
+}
+
+.btn {
+  flex: 1;
+  margin: 0;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: $font-size-btn;
+  padding: 0.6rem 1.8rem;
+  border-radius: $space-lg;
+  border: none;
+  background: $color-primary;
+  color: $color-text-secondary;
+  box-shadow: $box-shadow-buttons;
+  @include mixins.hover-lift();
 }

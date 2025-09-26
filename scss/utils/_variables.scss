@@ -2,7 +2,9 @@ $font-family-base: 'Inter', sans-serif;
 
 $color-black: #000000;
 $color-white: #ffffff;
+
 $color-grey: #6d6d6d;
+$color-dark-grey: #333333;
 $color-light-gray: #d0d0d0;
 
 $color-primary: #2563eb;
@@ -13,9 +15,9 @@ $color-text-secondary: #ffffff;
 
 $color-background-body: #e0e6ee;
 
-$box-shadow-card: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
-  0 2px 4px -2px rgba(16, 24, 40, 0.1);
-
-$spacing-sm: 0.5rem;
-$spacing-md: 1rem;
-$spacing-lg: 1.5rem;
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 1.5rem;
+$space-lg: 2rem;
+$space-xl: 2.5rem;
+$space-xxl: 3rem;

@@ -1,34 +1,48 @@
+@use '../utils/mixins';
 @use '../utils/variables' as *;
+
+/*====================================
+=            VARIABLES               =
+====================================*/
 
 $font-size-section-headings: 1.25rem;
 $font-size-body-text: 1rem;
-$font-size-card-title: 1.1 * $font-size-body-text;
-$font-size-card-text: 0.95 * $font-size-body-text;
-
-$border-radius-panel: 0.5rem;
+$font-size-card-title: 1.1rem;
+$font-size-card-text: 0.95rem;
 
 $gap-section-title: 1rem;
 $gap-announcement-items: 2rem;
 $gap-grid: 2rem;
 
-$size-image-user: 4rem;
 $size-card-icon: 1.6rem;
+$size-avatar: 4rem;
+
+$border-radius-panel: 0.5rem;
+
+$box-shadow-card: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
+  0 2px 4px -2px rgba(16, 24, 40, 0.1);
+
+/*====================================
+=          MAIN LAYOUT               =
+====================================*/
 
 .dashboard-grid {
-  & {
-    flex: 1;
-    background: $color-background-body;
-    display: grid;
-    grid-template-columns: 1fr max(20rem, 20vw);
-    padding: 3rem 2rem 4rem;
-    column-gap: $gap-grid;
-  }
-
-  .section-title {
-    font-size: $font-size-section-headings;
-    margin: 0;
-  }
+  flex: 1;
+  background: $color-background-body;
+  display: grid;
+  grid-template-columns: 1fr max(20rem, 20vw);
+  padding: 3rem 2rem 4rem;
+  column-gap: $gap-grid;
 }
+
+.section-title {
+  font-size: $font-size-section-headings;
+  margin: 0;
+}
+
+/*====================================
+=             PROJECTS               =
+====================================*/
 
 .projects-section {
   display: flex;
@@ -38,173 +52,179 @@ $size-card-icon: 1.6rem;
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
   height: 100%;
   gap: $gap-grid;
 }
 
 .project-card {
-  & {
-    background: $color-white;
-    border-radius: $border-radius-panel;
-    padding: 2rem 3rem;
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-
-  .project-card__highlight {
-    width: $border-radius-panel;
-    height: 100%;
-    background: $color-secondary;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-top-left-radius: $border-radius-panel;
-    border-bottom-left-radius: $border-radius-panel;
-  }
-
-  .project-card__title {
-    font-size: $font-size-card-title;
-  }
-
-  .project-card__description {
-    color: $color-grey;
-    font-size: $font-size-card-text;
-    padding-bottom: 2rem;
-  }
-
-  .project-card__actions {
-    & {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 1.5rem;
-      position: absolute;
-      right: 3rem;
-      bottom: 1.5rem;
-    }
-
-    .project-card__action-button {
-      & {
-        background: $color-white;
-        border: none;
-      }
-      &:hover {
-        cursor: pointer;
-      }
-    }
-    .project-card__icon {
-      width: $size-card-icon;
-      height: $size-card-icon;
-      min-width: $size-card-icon;
-    }
-  }
+  background: $color-white;
+  border-radius: $border-radius-panel;
+  padding: $space-lg $space-xxl;
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: $box-shadow-card;
+  @include mixins.hover-lift();
 }
+
+.project-card__highlight {
+  width: $border-radius-panel;
+  height: 100%;
+  background: $color-secondary;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: $border-radius-panel;
+  border-bottom-left-radius: $border-radius-panel;
+}
+
+.project-card__title {
+  font-size: $font-size-card-title;
+}
+
+.project-card__title-link {
+  @include mixins.interactive-handle($color-black, $color-dark-grey);
+}
+
+.project-card__description {
+  color: $color-grey;
+  font-size: $font-size-card-text;
+  padding-bottom: $space-lg;
+  line-height: 1.4;
+}
+
+.project-card__actions {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: $space-md;
+  position: absolute;
+  right: $space-xxl;
+  bottom: $space-md;
+}
+
+.project-card__action-button {
+  background: $color-white;
+  border: none;
+  @include mixins.hover-opacity-pointer(0.85);
+}
+
+.project-card__icon {
+  @include mixins.icon-size($size-card-icon);
+  @include mixins.hover-opacity-pointer();
+}
+
+/*====================================
+=         SIDEBAR WIDGETS            =
+====================================*/
 
 .sidebar-widgets {
-  & {
-    display: grid;
-    row-gap: 2.5rem;
-  }
+  display: grid;
+  row-gap: $space-xl;
 }
+
+/*====================================
+=    ANNOUNCEMENT WIDGET            =
+====================================*/
 
 .announcements-widget {
-  & {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-section-title;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: $gap-section-title;
+}
 
-  .announcement-container {
-    flex: 1;
-    display: flex;
-    background-color: $color-white;
-    border-radius: $border-radius-panel;
-    padding: 2.2rem 2rem;
-  }
+.announcement-container {
+  flex: 1;
+  display: flex;
+  background-color: $color-white;
+  border-radius: $border-radius-panel;
+  padding: 2.2rem 2rem;
+  @include mixins.hover-lift();
+}
 
-  .announcements-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: $gap-announcement-items;
-  }
+.announcements-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: $gap-announcement-items;
+}
 
-  .announcement-item__title {
-    font-size: 0.95rem;
-    margin: 0;
-  }
-
-  .announcement-item__text {
-    font-size: 0.85rem;
-    color: $color-grey;
-    margin: 0;
-    padding-block: 0.5rem $gap-announcement-items;
-  }
-
-  .announcement-item {
-    &:not(:last-child) {
-      .announcement-item__text {
-        border-bottom: 1px solid $color-light-gray;
-      }
-    }
+.announcement-item {
+  &:not(:last-child) .announcement-item__text {
+    border-bottom: 1px solid $color-light-gray;
   }
 }
 
+.announcement-item__title {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.announcement-item__title-link {
+  @include mixins.interactive-handle($color-black, $color-dark-grey);
+}
+
+.announcement-item__text {
+  font-size: 0.85rem;
+  color: $color-grey;
+  margin: 0;
+  padding-block: $space-xs $gap-announcement-items;
+}
+
+/*====================================
+=         TRENDING WIDGET            =
+====================================*/
+
 .trending-widget {
-  & {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-section-title;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: $gap-section-title;
+}
 
-  .trending-container {
-    background: $color-white;
-    border-radius: $border-radius-panel;
-    flex: 1;
-    display: flex;
-    padding: 2rem 2rem;
-  }
+.trending-container {
+  background: $color-white;
+  border-radius: $border-radius-panel;
+  flex: 1;
+  display: flex;
+  padding: $space-lg;
+  @include mixins.hover-lift();
+}
 
-  .trending-list {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+.trending-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-  .trending-item {
-    & {
-      display: flex;
-      align-items: center;
-    }
+.trending-item {
+  display: flex;
+  align-items: center;
+}
 
-    img {
-      width: $size-image-user;
-      height: $size-image-user;
-    }
-  }
+.trending-item__avatar {
+  @include mixins.avatar-size($size-avatar);
+  @include mixins.hover-opacity-pointer();
+}
 
-  .trending-item__info {
-    & {
-      display: flex;
-      flex-direction: column;
-    }
+.trending-item__info {
+  display: flex;
+  flex-direction: column;
+}
 
-    .trending-item__handle {
-      font-weight: bold;
-      font-size: $font-size-body-text;
-    }
+.trending-item__handle {
+  font-weight: bold;
+  font-size: $font-size-body-text;
+  @include mixins.interactive-handle($color-black, $color-dark-grey);
+}
 
-    .trending-item__project {
-      color: $color-grey;
-      font-size: 1rem;
-      margin-top: -5px;
-    }
-  }
+.trending-item__project {
+  color: $color-grey;
+  font-size: $font-size-body-text;
+  margin-top: -$space-xs;
 }

@@ -1,94 +1,83 @@
+@use '../utils/mixins';
 @use '../utils/variables' as *;
 
+/*=============================================
+=                 VARIABLES                   =
+=============================================*/
 $font-size-header: 1.4rem;
-$font-size-link: 1.05rem;
+$font-size-link: 1.1rem;
 
-$icon-header-size: 2.6rem; 
-$icon-menu-size: $font-size-link; 
+$icon-header-size: 2.6rem;
+$icon-menu-size: $font-size-link;
 
+/*=============================================
+=                   SIDEBAR                   =
+=============================================*/
 .site-sidebar {
   background: $color-primary;
   display: flex;
   flex-direction: column;
-  gap: 2.6rem;
-  padding: 1.5rem 1rem;
+  gap: $space-xl;
+  padding: $space-md $space-sm;
 }
 
+/*=============================================
+=               SIDEBAR HEADER                =
+=============================================*/
 .sidebar-header__link {
-
-  & {
-    display: flex;
-    align-items: center;
-    gap: $spacing-sm;
-    color: $color-text-secondary;
-    text-decoration: none;
-  }
-
-  &:hover,
-  &:focus {
-    outline: none;
-    transform: translateY(1px);
-    opacity: 0.8;
-  }
-
-  .sidebar-header__icon {
-    fill: $color-text-secondary;
-    width: $icon-header-size;
-    height: $icon-header-size;
-    min-width: $icon-header-size;
-  }
-
-  .sidebar-header__title {
-    font-size: $font-size-header;
-    font-weight: 600;
-  }
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  color: $color-text-secondary;
+  text-decoration: none;
+  @include mixins.interactive-press();
 }
 
+.sidebar-header__icon {
+  fill: $color-text-secondary;
+  @include mixins.icon-size($icon-header-size);
+}
+
+.sidebar-header__title {
+  font-size: $font-size-header;
+  font-weight: 600;
+}
+
+/*=============================================
+=             SIDEBAR NAVIGATION              =
+=============================================*/
 .sidebar-navigation {
-  & {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: $space-xxl;
+}
 
-  .nav-menu {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-sm;
-    margin: 0;
-    padding-inline: 0.5rem;
-  }
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  margin: 0;
+  padding-inline: $space-xs;
+}
 
-  .nav-menu__link {
-    & {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      gap: 1rem;
-      color: $color-text-secondary;
-      transition: 
-        background-color 0.2s ease-in-out, 
-        transform 0.2s ease-in-out;
-    }
+.nav-menu__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: $space-sm;
+  color: $color-text-secondary;
+  @include mixins.interactive-press();
+}
 
-    &:hover,
-    &:focus {
-      outline: none;
-      transform: translateY(1px);
-      opacity: 0.8;
-    }
+.nav-link__icon {
+  fill: $color-text-secondary;
+  width: $icon-menu-size;
+  height: $icon-menu-size;
+  min-width: $icon-menu-size;
+}
 
-    .nav-link__icon {
-      fill: $color-text-secondary;
-      width: $icon-menu-size;
-      height: $icon-menu-size;
-      min-width: $icon-menu-size;
-    }
-
-    .nav-link__text {
-      font-weight: 600;
-      font-size: $font-size-link;
-    }
-  }
+.nav-link__text {
+  font-weight: 600;
+  font-size: $font-size-link;
 }

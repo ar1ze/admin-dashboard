@@ -1,0 +1,54 @@
+@use 'variables' as *;
+
+@mixin avatar-size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin icon-size($size) {
+  width: $size;
+  height: $size;
+  min-width: $size;
+}
+
+@mixin hover-opacity-pointer($opacity: 0.9) {
+  &:hover {
+    opacity: $opacity;
+    cursor: pointer;
+  }
+}
+
+@mixin interactive-handle($inital-color, $hover-color) {
+  & {
+    text-decoration: none;
+    color: $inital-color;
+  }
+
+  &:hover {
+    color: $hover-color;
+    cursor: pointer;
+  }
+}
+
+@mixin hover-lift(
+  $lift: -2px,
+  $shadow: 0 8px 25px rgba($color-black, 0.08),
+  $duration: 0.3s
+) {
+  transition: transform $duration ease, box-shadow $duration ease;
+
+  &:hover {
+    box-shadow: $shadow;
+    transform: translateY($lift);
+  }
+}
+
+@mixin interactive-press($translate: 1px, $duration: 0.2s) {
+  transition: transform $duration ease-in-out, opacity $duration ease-in-out;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    transform: translateY($translate);
+  }
+}
