@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use '../utils/variables' as *;
 
 $font-size-search: 1.6rem;
 $height-search: $font-size-search * 1.3;
@@ -30,6 +30,12 @@ $image-welcome-avatar-size: 4rem;
     background: $color-white;
   }
 
+  .user-profile__avatar,
+  .welcome-message__avatar {
+    &:hover {
+      opacity: 0.95;
+    }
+  }
   .user-profile__avatar,
   .welcome-message__avatar,
   .user-profile__notification-button,
@@ -133,8 +139,15 @@ $image-welcome-avatar-size: 4rem;
         font-size: 0.9rem;
       }
 
-      a {
-        text-decoration: none;
+      .welcome-message__handle {
+        & {
+          text-decoration: none;
+          color: $color-black;
+        }
+
+        &:hover {
+          color: $color-grey;
+        }
       }
     }
 

@@ -1,9 +1,10 @@
-@use 'fonts';
-@use 'reset';
-@use 'variables';
-@use 'site-sidebar';
-@use 'page-header';
-@use 'dashboard-grid';
+@use 'components/site-sidebar';
+@use 'components/page-header';
+@use 'components/dashboard-grid';
+
+@use 'utils/fonts';
+@use 'utils/reset';
+@use 'utils/variables';
 
 svg {
   width: 2rem;
