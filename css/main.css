@@ -512,7 +512,7 @@
 .trending-item__project {
   color: #6d6d6d;
   font-size: 1rem;
-  margin-top: -0.5rem;
+  margin-top: -1px;
 }
 
 @font-face {
