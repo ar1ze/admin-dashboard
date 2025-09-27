@@ -28,7 +28,7 @@ $height-search: $font-size-search * 1.3;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: $space-lg;
+  gap: 2vh;
   z-index: 1;
 }
 
@@ -62,7 +62,7 @@ $height-search: $font-size-search * 1.3;
 
 .search-bar__icon {
   @include mixins.icon-size($font-size-search);
-  @include mixins.hover-opacity-pointer();
+  @include mixins.hover-effects(pointer);
 }
 
 .search-bar__input {
@@ -100,18 +100,18 @@ $height-search: $font-size-search * 1.3;
 
 .user-profile__notification-icon {
   @include mixins.icon-size($size-profile-icon);
-  @include mixins.hover-opacity-pointer();
+  @include mixins.hover-effects(pointer);
 }
 
 .user-profile__avatar {
   @include mixins.avatar-size($size-user-profile-image);
-  @include mixins.hover-opacity-pointer();
+  @include mixins.hover-effects(pointer);
 }
 
 .user-profile__name {
   font-weight: bold;
   @include mixins.interactive-handle($color-black, $color-dark-grey);
-  @include mixins.hover-opacity-pointer();
+  @include mixins.hover-effects(pointer);
 }
 
 /*====================================
@@ -126,7 +126,7 @@ $height-search: $font-size-search * 1.3;
 
 .welcome-message__avatar {
   @include mixins.avatar-size($size-welcome-avatar-image);
-  @include mixins.hover-opacity-pointer();
+  @include mixins.hover-effects(pointer);
 }
 
 .welcome-message__text {
@@ -168,4 +168,5 @@ $height-search: $font-size-search * 1.3;
   color: $color-text-secondary;
   box-shadow: $box-shadow-buttons;
   @include mixins.hover-lift();
+  @include mixins.hover-effects(pointer);
 }

@@ -12,9 +12,9 @@ $font-size-card-text: 0.95rem;
 
 $gap-section-title: 1rem;
 $gap-announcement-items: $space-md;
-$gap-grid: $space-lg;
+$gap-grid: $space-md;
 
-$size-card-icon: 1.6rem;
+$size-card-icon: 1.5rem;
 $size-avatar: 4rem;
 
 $border-radius-panel: 0.5rem;
@@ -30,7 +30,7 @@ $box-shadow-card: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
   flex: 1;
   background: $color-background-body;
   display: grid;
-  grid-template-columns: 1fr max(20rem, 20vw);
+  grid-template-columns: 1fr max(20rem, 19vw);
   padding: $space-md $space-lg $space-xxl;
   column-gap: $gap-grid;
 }
@@ -102,21 +102,21 @@ $box-shadow-card: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
   margin: 0;
   padding: 0;
   display: flex;
-  gap: $space-md;
+  gap: $space-sm;
   position: absolute;
-  right: $space-xxl;
+  right: $space-xl;
   bottom: $space-md;
 }
 
 .project-card__action-button {
   background: $color-white;
   border: none;
-  @include mixins.hover-opacity-pointer(0.85);
+  @include mixins.hover-effects(pointer);
 }
 
 .project-card__icon {
   @include mixins.icon-size($size-card-icon);
-  @include mixins.hover-opacity-pointer();
+  @include mixins.hover-effects(pointer);
 }
 
 /*====================================
@@ -125,7 +125,7 @@ $box-shadow-card: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
 
 .sidebar-widgets {
   display: grid;
-  grid-template: repeat(2, 1fr) / 1fr;
+  grid-template-rows: repeat(2, 1fr);
   row-gap: $space-xl;
 }
 
@@ -144,27 +144,21 @@ $box-shadow-card: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
   display: flex;
   background-color: $color-white;
   border-radius: $border-radius-panel;
-  padding: 2.2rem 2rem;
+  padding: $space-xl $space-lg;
   @include mixins.hover-lift();
 }
 
 .announcements-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  gap: $gap-announcement-items;
-}
-
-.announcement-item {
-  &:not(:last-child) .announcement-item__text {
-    border-bottom: 1px solid $color-light-gray;
-  }
+  justify-content: space-between;
 }
 
 .announcement-item__title {
   font-size: 0.95rem;
   font-weight: bold;
   margin: 0;
+  padding: 0;
 }
 
 .announcement-item__title-link {
@@ -175,7 +169,11 @@ $box-shadow-card: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
   font-size: 0.85rem;
   color: $color-grey;
   margin: 0;
-  padding-block: $space-xs $gap-announcement-items;
+  padding-top: 2px;
+}
+
+.announcement-item__divider {
+  border-bottom: 1px solid $color-light-gray;
 }
 
 /*====================================
@@ -214,7 +212,7 @@ $box-shadow-card: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
 
 .trending-item__avatar {
   @include mixins.avatar-size($size-avatar);
-  @include mixins.hover-opacity-pointer();
+  @include mixins.hover-effects(pointer);
 }
 
 .trending-item__info {

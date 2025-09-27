@@ -11,10 +11,10 @@
   min-width: $size;
 }
 
-@mixin hover-opacity-pointer($opacity: 0.9) {
+@mixin hover-effects($cursor: default, $opacity: 0.9) {
   &:hover {
+    cursor: $cursor;
     opacity: $opacity;
-    cursor: pointer;
   }
 }
 
