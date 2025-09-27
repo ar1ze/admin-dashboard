@@ -53,7 +53,7 @@ $box-shadow-card: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   height: 100%;
   gap: $gap-grid;
 }
@@ -142,9 +142,11 @@ $box-shadow-card: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
 .announcement-container {
   flex: 1;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: $color-white;
   border-radius: $border-radius-panel;
-  padding: $space-xl $space-lg;
+  padding: $space-lg;
   @include mixins.hover-lift();
 }
 
@@ -152,6 +154,7 @@ $box-shadow-card: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-basis: min(22rem, 95%);
 }
 
 .announcement-item__title {
@@ -191,12 +194,14 @@ $box-shadow-card: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
   border-radius: $border-radius-panel;
   flex: 1;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: $space-lg;
   @include mixins.hover-lift();
 }
 
 .trending-list {
-  flex: 1;
+  flex-basis: min(25rem, 95%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
