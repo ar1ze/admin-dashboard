@@ -12,7 +12,7 @@ A responsive admin dashboard layout built with HTML and CSS, focusing on modern 
 ***
 
 ## Live Demo
-[View the Live Dashboard](https://ar1ze.github.io/odin-admin-dashboard/)
+[View the Live Dashboard](https://ar1ze.github.io/admin-dashboard/)
 
 ***
 
