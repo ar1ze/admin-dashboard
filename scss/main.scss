@@ -1,6 +1,6 @@
-@use 'components/site-sidebar';
-@use 'components/page-header';
-@use 'components/dashboard-grid';
+@use 'layout/site-sidebar';
+@use 'layout/page-header';
+@use 'layout/dashboard-grid';
 
 @use 'utils/fonts';
 @use 'utils/reset';
